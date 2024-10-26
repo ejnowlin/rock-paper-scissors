@@ -81,3 +81,5 @@ function playGame() {
         console.log("Tie! " + humanScore + " to " + computerScore);
     }
 }
+
+playGame();
