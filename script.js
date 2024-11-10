@@ -35,31 +35,42 @@ function getComputerChoice() {
 
 let humanScore = 0;
 let computerScore = 0;
+const results = document.querySelector("#results");
+const roundResult = document.createElement("div");
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "paper") {
-        console.log("You lose! Paper beats Rock.")
+        results.textContent = "You lose! Paper beats Rock.";
+        results.appendChild(roundResult);
         ++computerScore;
     } else if (humanChoice === "rock" && computerChoice === "scissors") {
-        console.log("You win! Rock beats Scissors.");
+        results.textContent = "You win! Rock beats scissors.";
+        results.appendChild(roundResult);
         ++humanScore;
     } else if (humanChoice === "rock" && computerChoice === "rock") {
-        console.log("Tie! Rock twinsies. Nobody scores.");
+        results.textContent = "Tie! Rock twinsies. Nobody scores.";
+        results.appendChild(roundResult);
     } else if (humanChoice === "paper" && computerChoice === "rock") {
-        console.log("You win! Paper beats Rock.");
+        results.textContent = "You win! Paper beats Rock."
+        results.appendChild(roundResult);
         ++humanScore;
     } else if (humanChoice === "paper" && computerChoice === "scissors") {
-        console.log("You lose! Scissors beats Paper.");
+        results.textContent = "You lose! Scissors beats Paper."
+        results.appendChild(roundResult);
         ++computerScore;
     } else if (humanChoice === "paper" && computerChoice === "paper") {
-        console.log("Tie! Paper twinsies. Nobody scores.");
+        results.textContent = "Tie! Paper twinsies. Nobody scores."
+        results.appendChild(roundResult);
     } else if (humanChoice === "scissors" && computerChoice === "rock") {
-        console.log("You lose! Rock beats Scissors.");
+        results.textContent = "You lose! Rock beats Scissors."
+        results.appendChild(roundResult);
         ++computerScore;
     } else if (humanChoice === "scissors" && computerChoice === "paper") {
-        console.log("You win! Scissors beats Paper.");
+        results.textContent = "You win! Scissors beats Paper."
+        results.appendChild(roundResult);
         ++humanScore;
     } else {
-        console.log("Tie! Scissors twinsies. Nobody scores.");
+        results.textContent = "Tie! Scissors twinsies. Nobody scores."
+        results.appendChild(roundResult);
     }
 }
