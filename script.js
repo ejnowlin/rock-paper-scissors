@@ -37,6 +37,7 @@ let humanScore = 0;
 let computerScore = 0;
 const results = document.querySelector("#results");
 const roundResult = document.createElement("div");
+const currentScore = document.createElement("div");
 
 function playRound(humanChoice, computerChoice) {
     if (humanChoice === "rock" && computerChoice === "paper") {
@@ -72,5 +73,21 @@ function playRound(humanChoice, computerChoice) {
     } else {
         results.textContent = "Tie! Scissors twinsies. Nobody scores."
         results.appendChild(roundResult);
+    }
+
+    currentScore.textContent = 
+        "Current score: " + "You " + humanScore + 
+        ", Computer " + computerScore;
+    results.appendChild(currentScore);
+
+    if (humanScore === 5) {
+        results.textContent = "You win! " + humanScore + " to " + computerScore;
+        humanScore = 0;
+        computerScore = 0;
+    }
+    else if (computerScore === 5) {
+        results.textContent = "You lose! " + computerScore + " to " + humanScore;
+        humanScore = 0;
+        computerScore = 0;
     }
 }
